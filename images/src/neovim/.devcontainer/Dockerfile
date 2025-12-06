@@ -1,10 +1,10 @@
 # Start from a base dev container image
 FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
-# Install build dependencies & tmux
+# Install build dependencies, tmux, stow
 RUN apt-get update && \
     apt-get install -y \
-      ninja-build gettext cmake curl build-essential git tmux && \
+      ninja-build gettext cmake curl build-essential git tmux stow && \
     rm -rf /var/lib/apt/lists/*
 
 # Clone and build Neovim (latest stable)
